@@ -5,8 +5,10 @@
 
 int registrar(){
 	char arquivo[40], cpf[40], nome[40], sobrenome[40], cargo[40];
+	int opcao;
 	
 	setlocale(LC_ALL,"Portuguese");
+	system("cls");
 	
 	printf("\n---Registrar nomes---\n\n");	//função de registrar nomes
 	printf("\nDigite o CPF: ");
@@ -53,14 +55,29 @@ int registrar(){
 	fclose(file);
 	
 	system("pause");
+	system("cls");
+	
+	printf("\n\n\t1- Registrar mais nomes");
+	printf("\n\t2- Voltar ao menu\nOpção:");
+	scanf("%d",&opcao);
+	
+	if(opcao==1){
+		registrar();
+	}
+	else{
+		printf("\nVoltando ao menu\n");
+		system("pause");
+	}
+	
 	
 }
 int consultar(){		//função de consultar nomes
 	
 	char cpf[40], conteudo[200];
+	int opcao;
 	
 	setlocale(LC_ALL,"Portuguese");	
-	
+	system("cls");
 	printf("\n---Consultar nomes---\n\n");   //titulo da pagina
 	
 	printf("\nDigite um CPF para consultar: ");
@@ -81,6 +98,21 @@ int consultar(){		//função de consultar nomes
 	}
 	
 	system("pause");
+	system("cls");
+	
+	printf("\n\n\t1- Consultar mais nomes");
+	printf("\n\t2- Voltar ao menu\nOpção:");
+	scanf("%d",&opcao);
+	
+	if(opcao==1){
+		consultar();
+	}
+	else{
+		printf("Voltando ao menu!");
+		system("pause");
+	}
+		
+	
 }
 
 int deletar(){
@@ -88,7 +120,9 @@ int deletar(){
 	setlocale(LC_ALL,"Portuguese");
 	
 	char cpf[40];
+	int opcao;
 	
+	system("cls");
 	printf("\n---Deletar nomes---\n\n");    //função de deletar nomes     (ainda não completa)
 	
 	printf("Digite o CPF do usuário a ser deletado: ");
@@ -101,6 +135,19 @@ int deletar(){
 	if(file==NULL){
 		printf("\nO CPF inserido não se encontra no sistema!\n");
 		system("pause");
+	}
+	
+	system("cls");
+	printf("\n\n\t1- Deletar mais nomes");
+	printf("\n\t2- Voltar ao menu\nOpção:");
+	scanf("%d",&opcao);
+	
+	if(opcao==1){
+		deletar();
+	}
+	else{
+		system("cls");
+		printf("\nvoltando ao menu!\n");
 	}
 
 	
